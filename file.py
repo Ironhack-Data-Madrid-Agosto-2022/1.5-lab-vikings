@@ -1,6 +1,3 @@
-import random
-
-
 class Soldier:
     def __init__ (self, health, strength):
         self.health = health
@@ -14,8 +11,6 @@ class Soldier:
             self.health = 0
         else:
             self.health -= damage
-
-# Viking
 
 
 class Viking(Soldier):
@@ -33,10 +28,7 @@ class Viking(Soldier):
             
     def battleCry(self):
         return "Odin Owns You All!"
-        
-            
-# Saxon
-
+    
 
 class Saxon(Soldier):
     def __init__ (self, health, strength):
@@ -49,10 +41,7 @@ class Saxon(Soldier):
             return (f"A Saxon has received {damage} points of damage")
         else:
             return ("A Saxon has died in combat")
-
-# War
-
-
+        
 class War:
     
     def __init__(self):
@@ -98,19 +87,3 @@ class War:
         
         if self.vikingArmy != [] and self.saxonArmy != []:
             return "Vikings and Saxons are still in the thick of battle."
-        
-    
-    
-        
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
