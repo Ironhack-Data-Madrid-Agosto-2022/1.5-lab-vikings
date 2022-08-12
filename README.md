@@ -146,17 +146,17 @@ Modify the `Soldier` constructor function and add 2 methods to its prototype: `a
 
 #### constructor function
 
-- ## should receive **2 arguments** (health & strength)
-- ## should receive the **`health` property** as its **1st argument**
-- ## should receive the **`strength` property** as its **2nd argument**
+- #SI # should receive **2 arguments** (health & strength)
+- # SI# should receive the **`health` property** as its **1st argument**
+- # SU # should receive the **`strength` property** as its **2nd argument**
 
-#### `attack()` method
+##SSIS## `attack()` method
 
 - should be a function
 - should receive **0 arguments**
 - should return **the `strength` property of the `Soldier`**
 
-#### `receiveDamage()` method
+##SI## `receiveDamage()` method
 
 - should be a function
 - should receive **1 argument** (the damage)
