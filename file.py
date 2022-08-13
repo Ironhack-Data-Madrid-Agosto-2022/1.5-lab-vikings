@@ -16,10 +16,11 @@ def dado():
 
 def comenzarGuerra (partida):
     os.system("clear")
+
     turno = 0
     while len(partida.saxonArmy) >= 1 and len(partida.vikingArmy) >= 1:
         time.sleep(1)
-        print("Turno ", turno, " ----------------------------------------")
+        print("Turno ", turno, " --------------------------------------")
         if dado() == 1:
             print(partida.vikingAttack())
         else:
@@ -29,7 +30,7 @@ def comenzarGuerra (partida):
         print("--------------------------------------------------")
 
         turno += 1
-        
+
         
 def mostrarMenu():
     print()
@@ -39,6 +40,8 @@ def mostrarMenu():
     print("1. Jugar")
     print("2. Readme")
     print("3. Salir")
+    print("------------------------------")
+
     
 def crearViking():
     listaNombres = ["CouchMaster", "Maestrodelsofa", "Expertoensofasymandos", "Gaminggolden", "Markattack", "Mamigamer", "Gamerbois", "Undergroundgamer", "Gamergoesout", "Bloodygamer", "EatPlayRepeat", "ELBICHO", "Damnbitch", "JuanCarlos", "Abelardo", "Chanquete", "Eustaquio", "PerroSucio", "KikeElMatador", "KikeArbitroDeMagic", "GitanoBueno"]
@@ -46,7 +49,7 @@ def crearViking():
     return vik
 
 def crearSaxon():
-    sax = vc.Saxon(random.randrange(150,300), random.randrange(50,100))
+    sax = vc.Saxon(random.randrange(150,300), random.randrange(45,80))
     return sax
     
 def mainJuego():
@@ -82,6 +85,8 @@ msgFail = ":) Ese no es el camino compañero"
 gaming = True
 opc = 0
 
+file_txt = "Rick.txt"
+
 
 while gaming:
     try:
@@ -90,8 +95,7 @@ while gaming:
         if opc == 1:
             mainJuego()
         elif opc == 2:
-            print("")
-            print("Opcion en obras... Disculpad las molestias :)")
+            print((open(file_txt,'r')).read())
         elif opc == 3:
             gaming = False
         else:
