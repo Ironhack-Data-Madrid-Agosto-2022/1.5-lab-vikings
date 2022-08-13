@@ -81,7 +81,7 @@ class War():
         
         string = voluntier_sax.receiveDamage(voluntier_vik.attack())
         
-        if voluntier_sax.health < 0:
+        if voluntier_sax.health <= 0:
             self.saxonArmy.pop(self.saxonArmy.index(voluntier_sax))
         
         return string
@@ -92,7 +92,7 @@ class War():
         
         string = voluntier_vik.receiveDamage(voluntier_sax.attack())
         
-        if voluntier_vik.health < 0:
+        if voluntier_vik.health <= 0:
             self.vikingArmy.pop(self.vikingArmy.index(voluntier_vik))      
         
         return string
