@@ -2,6 +2,8 @@
 # Soldier
 # metodo constructor es la propia clase, dentro van los argumentos. Luego debajo añadimos sus atributos. Y por ultimo creamos funciones que se llaman métodos ( para poder crear nuestras interactuaciones)
 
+#probando probando
+
 #Los atributos solo pueden estar si existen en la clase padre,  o si se crean añaden en el constructor como argumentos en la Subclase. Si no da error ya que no los encuentra, en caso de que se haga en este ejercicio no funciona porque es un test, pero en cualquier otro caso deberia funcionar.
 import random
 
