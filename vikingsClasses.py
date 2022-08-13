@@ -17,7 +17,7 @@ class Soldier():
 # Viking
 
 class Viking(Soldier):
-    """
+    
     def __init__(self, name, health, strength):
         self.name = name
         self.health = health
@@ -32,13 +32,13 @@ class Viking(Soldier):
     
     def battleCry(self):
         return "Odin Owns You All!"
-    """
+    
     pass
 
 # Saxon
 
 class Saxon(Soldier):
-    """
+ 
     def __init__(self, health, strength):
         self.health = health
         self.strength = strength
@@ -49,7 +49,7 @@ class Saxon(Soldier):
             return f"A Saxon has received {damage} points of damage"
         else:
             return f"A Saxon has died in combat"
-    """
+    
     pass
 
 # War
@@ -62,7 +62,7 @@ class War():
     - `vikingAttack()`
     - `saxonAttack()`
     - `showStatus()`
-    
+    """
     
     def __init__(self):
         self.vikingArmy = []
@@ -76,25 +76,41 @@ class War():
     
     def vikingAttack(self):
         #saxon.receivedmg(viking.attack)
-        numViking = random.choice()
-        numSaxon = random.choice()
+        voluntier_vik = random.choice(self.vikingArmy)
+        voluntier_sax = random.choice(self.saxonArmy)
         
-        self.saxonArmy[numSaxon].receiveDamage(self.vikingArmy[numViking].attack())
+        string = voluntier_sax.receiveDamage(voluntier_vik.attack())
         
-        if saxonArmy[numSaxon].health < 0:
-            saxonArmy.pop(numSaxon)
+        if voluntier_sax.health < 0:
+            self.saxonArmy.pop(self.saxonArmy.index(voluntier_sax))
+        
+        return string
             
     def saxonAttack(self):
-        numViking = random.choice()
-        numSaxon = random.choice()
+        voluntier_vik = random.choice(self.vikingArmy)
+        voluntier_sax = random.choice(self.saxonArmy)
         
-        self.vikingArmy[numViking].receiveDamage(self.saxonArmy[numSaxon].attack())
+        string = voluntier_vik.receiveDamage(voluntier_sax.attack())
         
-        if vikingArmy[numViking].health < 0:
-            vikingArmy.pop(numViking)        
+        if voluntier_vik.health < 0:
+            self.vikingArmy.pop(self.vikingArmy.index(voluntier_vik))      
+        
+        return string
         
     def showStatus(self):
         
-    """    
+        """
+        - **if the `Saxon` array is empty**, should return _**"Vikings have won the war of the century!"**_
+        - **if the `Viking` array is empty**, should return _**"Saxons have fought for their lives and survive another day..."**_
+        - **if there are at least 1 `Viking` and 1 `Saxon`**, should return _**"Vikings and Saxons are still in the thick of battle."**_
+        """
+        
+        if len(self.saxonArmy) >= 1 and len(self.vikingArmy) >= 1:
+            return "Vikings and Saxons are still in the thick of battle."
+        else:
+            if len(self.saxonArmy) == 0:
+                return "Vikings have won the war of the century!"
+            else:   #len(self.vikingArmy) == 0:
+                return "Saxons have fought for their lives and survive another day..."
     
     pass
