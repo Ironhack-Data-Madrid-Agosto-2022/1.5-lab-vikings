@@ -198,7 +198,7 @@ Modify the `Viking` constructor function, have it inherit from `Soldier`, reimpl
 - should receive **1 argument** (the damage)
 - should remove the received damage from the `health` property
 - **if the `Viking` is still alive**, it should return **"NAME has received DAMAGE points of damage"**
-- **if the `Viking` dies**, it should return **"NAME has died in act of combat"**
+- **if the `Viking` dies**, it should return **""**
 
 #### `battleCry()` method
 
@@ -252,7 +252,7 @@ Now we get to the good stuff: WAR! Our `War` constructor function will allow us 
 
 Modify the `War` constructor and add 5 methods to its prototype:
 
-- `addViking()`
+- `addViking()
 - `addSaxon()`
 - `vikingAttack()`
 - `saxonAttack()`
