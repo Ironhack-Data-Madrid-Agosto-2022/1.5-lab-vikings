@@ -1,8 +1,9 @@
 
 # Soldier
-
+import random
 
 class Soldier:
+    import random
     def __init__(self, health, strength):
         self.health = health
         self.strength = strength
@@ -22,17 +23,11 @@ class Soldier:
 
 
 class Viking(Soldier):
-    
+    import random
     def __init__(self, name ="", health = '', strength = ''):
         self.name = name
         self.health = health
         self.strength = strength
-    
-    #def salud(self):
-     #   return self.health
-    
-    def attack(self):
-        return self.strength
         
     def receiveDamage(self, damage):
         self.damage = damage
@@ -51,16 +46,10 @@ class Viking(Soldier):
 
 
 class Saxon(Soldier):
-    
+    import random
     def __init__(self, health ='', strength = ''):
         self.health = health
         self.strength = strength
-    
-    def salud(self):
-        return self.health
-    
-    def attack(self):
-        return self.strength
     
     def receiveDamage(self, damage):
         self.damage = damage
@@ -73,7 +62,7 @@ class Saxon(Soldier):
 
 
 class War:
-        
+    import random
     def __init__(self):
         self.vikingArmy = []
         self.saxonArmy = []
@@ -86,18 +75,22 @@ class War:
         
 
     def vikingAttack(self):
-        b = self.saxonArmy[0].receiveDamage(self.vikingArmy[0].strength)
-        if self.saxonArmy[0].health <= 0:
-            self.saxonArmy.pop(0)
+        b = random.choice(self.vikingArmy)
+        a = random.choice(self.saxonArmy)
+        c = a.receiveDamage(b.strength)
+        if a.health <= 0:
+            self.saxonArmy.remove(a)
         
-        return b
+        return c
     
     def saxonAttack(self):
-        a = self.vikingArmy[0].receiveDamage(self.saxonArmy[0].strength)
-        if self.vikingArmy[0].health <= 0:
-            self.vikingArmy.pop(0)
+        a = random.choice(self.vikingArmy)
+        b = random.choice(self.saxonArmy)
+        c = a.receiveDamage(b.strength)
+        if a.health <= 0:
+            self.vikingArmy.remove(a)
         
-        return a
+        return c
     
     def showStatus(self):
         if len(self.saxonArmy) == 0:
